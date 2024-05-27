@@ -32,10 +32,11 @@ Edge_Detector = 'compressed_models/best.engine'                  # Compressed Mo
 
 
 
-TOKEN = "6474838691:AAF9vT0eItqZ4OdqKn5Ekm4QsrgDFBdHzqA"
-chat_id = '7078807717'
 
-# Channel ID Sample: -1001829542722
+TOKEN = "**********************************************"
+chat_id = '**********'
+
+
 
 bot = telegram.Bot(token=TOKEN)
 
