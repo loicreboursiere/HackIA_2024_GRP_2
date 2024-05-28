@@ -6,7 +6,7 @@
 
 ## Groupe 2 (HackAI_2024_GRP_2)
 
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-GRP2-team.png width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-GRP2-team.jpg width="300">
 
 <br> *Data Expert* : Francesco Romeo :older_adult: - training, optimisation, explicabilité
 <br> *Operations Manager* : Loïc Reboursière :bearded_person: - pruning, compression, benchmark
