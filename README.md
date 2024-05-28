@@ -59,55 +59,49 @@ Dès qu'une image est classifiée comme feu ou départ de feu, le modèle [YoloV
 
 ### Phase 2 : Portage sur ressource Edge : Jetson Xavier 
 
-Reconnaissance de visage pour déverouillage de l'application
+#### Reconnaissance de visage pour déverouillage de l'application
 
 Adaptation du modèles développé pour qu'il puisse fonctionner sur Edge, permettant ainsi un traitement en temps réel et une consommation d'énergie optimisée.
 
-Modèle “Face”
+<br>1. Modèle “Face”
 <br> Authentification faciale grâce à la reconnaissance de visages.
+<br>Face regognition 1
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition1.png width="300">
+<br>Face recognition 2
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition2.jpg width="300">
 
-<br> + Telegram
-api ; compte HackIA24 - settings via BotFather (détails : https://docs.google.com/document/d/1P956ckT9Q_z-uEWGx0m6gaDZo564Fe3xZ0dCuvSrkto/edit?usp=drive_link)
-
-
+<br>2. Telegram
+<br> Set up d'une API avec les settings via BotFather et création du compte HackIA24 sur Telegram 
+<br> Détails : https://docs.google.com/document/d/1P956ckT9Q_z-uEWGx0m6gaDZo564Fe3xZ0dCuvSrkto/edit?usp=drive_link
 
 ### Phase 3 : Optimisation et compression de modèles
 #### Optimisation des modèles
 
-<br> !!! tableaux comparaison
-métriques des meilleures versions de modèles compressés
-
-- **Pruning :** Description des techniques de pruning appliquées.
+- **Pruning :** 
 Objectif : Réduire le poids pour rendre le modèle plus efficaces en termes de temps de calcul et d'utilisation de la mémoire, sans compromettre significativement leur précision. C'est déployer ces modèles sur des ressources limitées telles que les dispositifs Edge AI.
 Résultat : Notre modème étant petit, le pruning sur MobileNet n'a pas vraiment d'effet intéressant, même si compressé par 5 (190.000 paramètres). Nous n'avons que 30% d’accuracy.
+<br>Pruning MobileNetv3 Small parameters
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-parameters.png width="200">
+<br>Pruning MobileNetv3 Small results
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-results.png width="200">
+<br>Pruning MobileNetv3 Small retrain
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-retrain.png width="200">
-Pruning sur MobileNet, pas utile même si compressé par 5 (190.000 paramètres), que 30% d’accuracy.
 MobileNet : 4.5 MB | 2.7 MB
 
-- **Quantization :** Description des techniques de quantization appliquées.
-Diminuer la taille du modèle et accélérer les calculs sans sacrifier la précision du modèle. Cela permet d'améliorer les performances du modèle sur des appareils avec des capacités de calcul et de mémoire limitées, comme les Jetson Xavier, tout en maintenant une efficacité énergétique élevée.
+- **Quantization :** 
+Objectif : Diminuer la taille du modèle et accélérer les calculs sans sacrifier la précision du modèle. Cela permet d'améliorer les performances du modèle sur des appareils avec des capacités de calcul et de mémoire limitées, comme les Jetson Xavier, tout en maintenant une efficacité énergétique élevée.
 YOLO V8 : 89.5 MB |23.8 MB
 
-### Phase 4 :  Explicabilité des modèles
+### Phase 4 : Explicabilité des modèles
 - **Framework utilisé :** PyTorch.
 - **Méthodes d'explicabilité :** Description des méthodes et résultats obtenus.
 
-## Conclusion
-### Synthèse du projet
-Synthèse des travaux réalisés, des défis relevés et des résultats obtenus.
-
-### Présentation
-https://www.canva.com/design/DAGFneZKn2o/FtJgHbfXzrO6-3KTsr24dQ/edit?utm_content=DAGFneZKn2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
-
-## Environnements, outils utilisés, méthodologie et références utiles
+## Environnements, outils utilisés et méthodologie
 - **Environnements :** Google Colab, Google Colab Pro.
   
 - **Frameworks :** TensorFlow, PyTorch, Keras.
   MobileNet, YOLO
+  
 - **Outils de collaboration :** 
 <br> Drive : https://drive.google.com/drive/folders/1pZg4WNNQ67gFMcpX1OwIWz55K1kt07ip?usp=sharing 
 <br> Git : https://github.com/loicreboursiere/HackAI_2024_GRP_2 
@@ -115,8 +109,45 @@ https://www.canva.com/design/DAGFneZKn2o/FtJgHbfXzrO6-3KTsr24dQ/edit?utm_content
 <br> Telegram : https://t.me/HackIA24_bot
 
 - **Méthodologie :**
- <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/methodology.jpg width="300">
+<br> Gestion de projet agile avec une répartition des rôles et tâches entre chaque membre du groupe ainsi qu'une approche par essais/erreurs pour avancer sur les développements.
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/methodology.jpg width="300">
 
-- **Références :** Liste des références
+## Conclusion
+### Synthèse du projet
+- **Principaux Résultats :**
+<br>Modèles de classification et de détection
+<br>Nous avons réussi à développer et entraîner des modèles de classification d'images pour détecter les feux, les départs de feux et les images sans feu avec une précision satisfaisante. L'utilisation de techniques de Transfert Learning et de Grid Search pour l'optimisation des hyperparamètres a permis d'atteindre des performances optimales.
+
+    Tracking en temps réel : L'intégration du modèle YOLOv8 pour le tracking en temps réel des feux dans les vidéos de tests a été une réussite, permettant une détection rapide et précise des incidents.
+
+    Déploiement sur Jetson Xavier : Nous avons adapté les modèles pour qu'ils fonctionnent efficacement sur le Jetson Xavier, démontrant la faisabilité du traitement en temps réel sur des ressources limitées.
+
+    Reconnaissance faciale : L'application inclut une fonctionnalité de reconnaissance faciale pour le déverrouillage, augmentant la sécurité et l'accessibilité de notre solution.
+
+    Optimisation et compression : Les techniques de pruning et de quantization ont été appliquées pour réduire la taille des modèles et améliorer leur efficacité sans sacrifier de manière significative la précision. Par exemple, YOLOv8 a été compressé de 89.5 MB à 23.8 MB.
+
+Points Forts du Projet
+
+    Travail d'équipe et collaboration : Le succès de ce projet repose sur une excellente collaboration et répartition des tâches au sein de l'équipe, chacun apportant son expertise spécifique.
+
+    Utilisation d'outils avancés : Le choix des outils tels que PyTorch, TensorFlow et Google Colab a permis une gestion efficace du développement et de l'entraînement des modèles.
+
+    Focus sur l'optimisation : L'accent mis sur l'optimisation pour le déploiement sur des ressources Edge AI a démontré une approche pratique et applicable à des scénarios réels.
+
+Perspectives d'Amélioration Futures
+
+    Amélioration de la précision des modèles : Bien que les résultats obtenus soient satisfaisants, il est possible d'améliorer encore la précision des modèles en explorant des architectures plus avancées et en utilisant des ensembles de données plus larges et diversifiés.
+
+    Robustesse du système : Renforcer la robustesse du système en intégrant des mécanismes de détection des anomalies et de gestion des erreurs pour assurer une performance stable en conditions réelles.
+
+    Extensions fonctionnelles : Ajouter des fonctionnalités supplémentaires telles que l'alerte en temps réel via des notifications push ou des intégrations avec d'autres systèmes de gestion des incidents pour une réponse plus rapide.
+
+    Optimisation énergétique : Continuer à explorer des techniques pour réduire encore la consommation d'énergie du système, ce qui est crucial pour les déploiements dans des environnements urbains intelligents.
+
+    Explicabilité des modèles : Développer des méthodes d'explicabilité plus avancées pour fournir des insights plus clairs sur le fonctionnement interne des modèles, aidant ainsi à leur adoption dans des contextes où la transparence est cruciale.
+
+## Présentation donnée à la clôture du HackIA24
+https://www.canva.com/design/DAGFneZKn2o/FtJgHbfXzrO6-3KTsr24dQ/edit?utm_content=DAGFneZKn2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
+
 
 
