@@ -2,8 +2,8 @@
 <br>18-19 mai 2024
 <br>
 <br>
-#<img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/raw/main/img/HackIA24-logo width="300">
-![HackIA 2024 logo](https://github.com/loicreboursiere/HackIA_2024_GRP_2/raw/main/img/HackIA24-logo "HackIA 2024 logo")
+#<img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-logo.png width="300">
+![HackIA 2024 logo](https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-logo.png "HackIA 2024 logo")
 #https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
