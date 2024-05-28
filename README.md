@@ -31,6 +31,8 @@
 
 Les codes et les résultats relatifs à cette phase sont repris dans le dossier [training](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/training).
 
+Les modèles utilisés pour les différentes étapes de ce hackathon peuvent être obtenus en suivant le lien dans le dossier [model](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/model).
+
 #### Transfert Learning et optimisation des modèles de classification
 
 Plusieurs algorithmes de classification de l'état de l'art ont été testés par Transfert Learning. Une recherche des meilleurs hyperparamètres a été effectuée via une technique de Grid Search. Cette technique vise, pour chaque modèle utilisé, à tester une série de valeurs pour chaque hyperparamètre.
