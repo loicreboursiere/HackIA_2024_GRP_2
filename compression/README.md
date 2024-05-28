@@ -1,6 +1,6 @@
 # Compression résultats
 
-Trois modèles ont été compressés en utilisant des technique d'élagage (pruning) : MobileNet_V3_small, VGG16 et Yolov8.
+Trois modèles ont été compressés en utilisant des techniques d'élagage (pruning) : MobileNet_V3_small, VGG16 et Yolov8.
 
 ## Elagage des modèles MobileNet_v3_small et VGG16
 
