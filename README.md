@@ -114,7 +114,7 @@ YOLO V8 : 89.5 MB |23.8 MB
 
 ## Conclusion
 ### Synthèse du projet
-- **Principaux résultats :**
+**Principaux résultats :**
 <br>
 <br> - Modèles de classification et de détection :
 <br>Nous avons réussi à développer et entraîner des modèles de classification d'images pour détecter les feux, les départs de feux et les images sans feu avec une précision satisfaisante. L'utilisation de techniques de Transfert Learning et de Grid Search pour l'optimisation des hyperparamètres a permis d'atteindre des performances optimales.
@@ -131,30 +131,30 @@ Nous avons adapté les modèles pour qu'ils fonctionnent efficacement sur le Jet
 <br>- Optimisation et compression :
 <br>Les techniques de pruning et de quantization ont été appliquées pour réduire la taille des modèles et améliorer leur efficacité sans sacrifier de manière significative la précision. Par exemple, YOLOv8 a été compressé de 89.5 MB à 23.8 MB.
 
--**Points forts du projet :**
-<br>Travail d'équipe et collaboration
+**Points forts du projet :**
+<br>- Travail d'équipe et collaboration :
 <br>Le succès de ce projet repose sur une excellente collaboration et répartition des tâches au sein de l'équipe, chacun apportant son expertise spécifique.
 <br>
-<br>Utilisation d'outils avancés
+<br>- Utilisation d'outils avancés :
 <br>Le choix des outils tels que PyTorch, TensorFlow et Google Colab a permis une gestion efficace du développement et de l'entraînement des modèles.
 <br>
-<br>Focus sur l'optimisation
+<br>- Focus sur l'optimisation :
 <br>L'accent mis sur l'optimisation pour le déploiement sur des ressources Edge AI a démontré une approche pratique et applicable à des scénarios réels.
 
--**Perspectives d'amélioration :**
-<br>Amélioration de la précision des modèles
+**Perspectives d'amélioration :**
+<br>- Amélioration de la précision des modèles :
 <br>Il est possible d'améliorer encore la précision des modèles en explorant des architectures plus avancées et en utilisant des ensembles de données plus larges et diversifiés.
 <br>
-<br>Robustesse du système
+<br>- Robustesse du système :
 <br>Renforcer la robustesse du système en intégrant des mécanismes de détection des anomalies et de gestion des erreurs pour assurer une performance stable en conditions réelles.
 <br>
-<br>Extensions fonctionnelles
+<br>- Extensions fonctionnelles : 
 <br>Ajouter des fonctionnalités supplémentaires telles que l'alerte en temps réel via des notifications push ou des intégrations avec d'autres systèmes de gestion des incidents pour une réponse plus rapide.
 <br>
-<br>Optimisation énergétique
+<br>- Optimisation énergétique : 
 <br>Continuer à explorer des techniques pour réduire encore la consommation d'énergie du système.
 <br>
-<br>Explicabilité des modèles
+<br>- Explicabilité des modèles :
 <br>Développer des méthodes d'explicabilité plus avancées pour fournir des insights plus clairs sur le fonctionnement interne des modèles.
 
 ## Présentation en équipe à la clôture du HackIA24
