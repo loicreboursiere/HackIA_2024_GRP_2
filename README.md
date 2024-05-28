@@ -29,13 +29,13 @@
 
 ### Phase 1 : Développement et entraînement des modèles
 
+Les codes et les résultats relatifs à cette phase sont repris dans le dossier [training](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/training).
+
 #### Transfert Learning et optimisation des modèles de classification
 
 Plusieurs algorithmes de classification de l'état de l'art ont été testés par Transfert Learning. Une recherche des meilleurs hyperparamètres a été effectuée via une technique de Grid Search. Cette technique vise, pour chaque modèle utilisé, à tester une série de valeurs pour chaque hyperparamètre.
 
 A chaque modification d'un hyperparamètre le modèle est réentrainé et les configurations sont classées les unes par rapport aux autres en fonction de leurs résultats.
-
-Les codes et les résultats relatifs à cette étape sont repris dans le dossier [training](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/training)
 
 Dataset final : https://drive.google.com/drive/folders/10FvmIW5iMZp31oEN0X9UfeA_-M2dyt7w?usp=sharing
 
@@ -54,63 +54,48 @@ Dataset final : https://drive.google.com/drive/folders/10FvmIW5iMZp31oEN0X9UfeA_
 
 #### Tracking des feux et des départs de feux 
 
-Dès qu'une image est classifiée comme feu ou départ de feu, le modèle [YoloV8](https://github.com/ultralytics/ultralytics) est utilisé pour tracker les feux en temps réel dans des vidéos de tests.
+Dès qu'une image est classifiée comme feu ou départ de feu, le modèle [YoloV8](https://github.com/ultralytics/ultralytics) est utilisé pour tracker les feux en temps réel. Celui-ci a été réentrainé pour l'occasion.
 
 
 ### Phase 2 : Portage sur ressource Edge : Jetson Xavier 
 
-#### Reconnaissance de visage pour déverouillage de l'application
+#### Reconnaissance de visages pour déverouillage de l'application
 
-Adaptation du modèles développé pour qu'il puisse fonctionner sur Edge, permettant ainsi un traitement en temps réel et une consommation d'énergie optimisée.
+L'application présente sur la ressource Jetson Xavier intégrait une reconnaissance faciale qui pouvait être mise à jour par le simple ajout d'une du visage a reconnaître et de la mise à jour du code correspondant à cette photo. Toute l'équipe a donc participé à cette séance photo de mlanière à ce que chacun puisse déverouiller l'application.
 
-<br>1. Modèle “Face”
-<br> Authentification faciale grâce à la reconnaissance de visages.
 <br>Face regognition 1
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition1.png width="300">
 <br>Face recognition 2
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition2.jpg width="300">
 
-<br>2. Telegram
-<br> Set up d'une API avec les settings via BotFather et création du compte HackIA24 sur Telegram 
-<br> Détails : https://docs.google.com/document/d/1P956ckT9Q_z-uEWGx0m6gaDZo564Fe3xZ0dCuvSrkto/edit?usp=drive_link
+Cette application a été modifiée (`EdgeAI/Edge_AI_Module_24_Input-modified.py`) pour intégrer l'envoi d'une notification Telegram lors d'une potentielle intrusion (non reconnaissance du visage).
+<br> Cette fonctionnalité a été obtenue par la mise en place d'une API via BotFather et création du compte HackIA24 sur Telegram. Les détails de ce bot sont repris dans le dossier [face_recognition](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/EdgeAI/face_recognition). 
+
 
 ### Phase 3 : Optimisation et compression de modèles
+
+Plus de détails sur cette phase peuvent être trouvés dans le dossier [compression](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/compression).
+
 #### Optimisation des modèles
 
 - **Pruning :** 
 Objectif : Réduire le poids pour rendre le modèle plus efficaces en termes de temps de calcul et d'utilisation de la mémoire, sans compromettre significativement leur précision. C'est déployer ces modèles sur des ressources limitées telles que les dispositifs Edge AI.
-Résultat : Notre modème étant petit, le pruning sur MobileNet n'a pas vraiment d'effet intéressant, même si compressé par 5 (190.000 paramètres). Nous n'avons que 30% d’accuracy.
-<br>Pruning MobileNetv3 Small parameters
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-parameters.png width="200">
-<br>Pruning MobileNetv3 Small results
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-results.png width="200">
-<br>Pruning MobileNetv3 Small retrain
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-retrain.png width="200">
+
+Résultat : Malgré de pauvre résultats (30% d'accuracy) pendant le hackathon, l'entrainement sur 10 périodes après pruning affiche un résultat de 94% sur le validation test. Cela signifie donc que malgré une diminution du nombre de paramètres environ par 5, le modèle semble rester performant. Plus de détails dans le dossier [compression](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/compression)
+
 MobileNet : 4.5 MB | 2.7 MB
 
 - **Quantization :** 
 Objectif : Diminuer la taille du modèle et accélérer les calculs sans sacrifier la précision du modèle. Cela permet d'améliorer les performances du modèle sur des appareils avec des capacités de calcul et de mémoire limitées, comme les Jetson Xavier, tout en maintenant une efficacité énergétique élevée.
-YOLO V8 : 89.5 MB |23.8 MB
+
+Le modèle MobileNet utilisé étant déjà très petit la quantization a été appliquée au modèle YoloV8 avec la variation de taille suivante : 89.5 MB | 23.8 MB
 
 ### Phase 4 : Explicabilité des modèles
-- **Framework utilisé :** PyTorch.
-- **Méthodes d'explicabilité :** Description des méthodes et résultats obtenus.
 
-## Environnements, outils utilisés et méthodologie
-- **Environnements :** Google Colab, Google Colab Pro.
-  
-- **Frameworks :** TensorFlow, PyTorch, Keras.
-  MobileNet, YOLO
-  
-- **Outils de collaboration :** 
-<br> Drive : https://drive.google.com/drive/folders/1pZg4WNNQ67gFMcpX1OwIWz55K1kt07ip?usp=sharing 
-<br> Git : https://github.com/loicreboursiere/HackAI_2024_GRP_2 
-<br> Slack : https://hackia-2024.slack.com/
-<br> Telegram : https://t.me/HackIA24_bot
+Pour permettre l'explicabilité de nos modèles, nous utilisons la méthode Grad-CAM (Gradient-weighted Class Activation Mapping) pour localiser les incendies dans les images. Cet algorithme a été utilisé lors de la première épreuve de la certification en IA.
 
-- **Méthodologie :**
-<br> Gestion de projet agile avec une répartition des rôles et tâches entre chaque membre du groupe ainsi qu'une approche par essais/erreurs pour avancer sur les développements.
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/methodology.jpg width="300">
+Les résultats de cette phase peuvent être trouvés dans le dossier [ExplainableAI](https://github.com/loicreboursiere/HackIA_2024_GRP_2/tree/main/ExplainableAI).
+
 
 ## Conclusion
 ### Synthèse du projet
@@ -129,7 +114,7 @@ Nous avons adapté les modèles pour qu'ils fonctionnent efficacement sur le Jet
 <br>L'application inclut une fonctionnalité de reconnaissance faciale pour le déverrouillage, augmentant la sécurité et l'accessibilité de notre solution.
 <br>
 <br>- Optimisation et compression :
-<br>Les techniques de pruning et de quantization ont été appliquées pour réduire la taille des modèles et améliorer leur efficacité sans sacrifier de manière significative la précision. Par exemple, YOLOv8 a été compressé de 89.5 MB à 23.8 MB.
+<br>Les techniques de pruning et de quantization ont été appliquées pour réduire la taille des modèles et améliorer leur efficacité sans sacrifier de manière significative la précision. Par exemple, YOLOv8 a été compressé de 89.5 MB à 23.8 MB et le modèle MobileNet_v3_Small a été compressé de 4.5 MB à 2.7 MB.
 
 **Points forts du projet :**
 <br>- Travail d'équipe et collaboration :
@@ -160,3 +145,17 @@ Nous avons adapté les modèles pour qu'ils fonctionnent efficacement sur le Jet
 ## Présentation en équipe à la clôture du HackIA24
 https://www.canva.com/design/DAGFneZKn2o/FtJgHbfXzrO6-3KTsr24dQ/edit?utm_content=DAGFneZKn2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton 
 
+## Appendix : Environnements, outils utilisés et méthodologie
+- **Environnements :** Jupyter notebook, Google Colab Pro.
+  
+- **Frameworks :** PyTorch
+  
+- **Outils de collaboration :** 
+<br> Drive : https://drive.google.com/drive/folders/1pZg4WNNQ67gFMcpX1OwIWz55K1kt07ip?usp=sharing 
+<br> Git : https://github.com/loicreboursiere/HackIA_2024_GRP_2 
+<br> Slack : https://hackia-2024.slack.com/
+<br> Telegram : https://t.me/HackIA24_bot
+
+- **Méthodologie :**
+<br> Gestion de projet agile avec une répartition des rôles et tâches entre chaque membre du groupe ainsi qu'une approche par essais/erreurs pour avancer sur les développements.
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/methodology.jpg width="300">
