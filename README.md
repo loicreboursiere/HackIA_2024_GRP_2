@@ -115,19 +115,20 @@ YOLO V8 : 89.5 MB |23.8 MB
 ## Conclusion
 ### Synthèse du projet
 - **Principaux résultats :**
-- <br>Modèles de classification et de détection :
+<br>
+<br> - Modèles de classification et de détection :
 <br>Nous avons réussi à développer et entraîner des modèles de classification d'images pour détecter les feux, les départs de feux et les images sans feu avec une précision satisfaisante. L'utilisation de techniques de Transfert Learning et de Grid Search pour l'optimisation des hyperparamètres a permis d'atteindre des performances optimales.
 <br>
-- <br>Tracking en temps réel :
+<br>- Tracking en temps réel :
 <br>L'intégration du modèle YOLOv8 pour le tracking en temps réel des feux dans les vidéos de tests a été une réussite, permettant une détection rapide et précise des incidents.
 <br>
-- <br>Déploiement sur Jetson Xavier :
+<br>- Déploiement sur Jetson Xavier :
 Nous avons adapté les modèles pour qu'ils fonctionnent efficacement sur le Jetson Xavier, démontrant la faisabilité du traitement en temps réel sur des ressources limitées.
 <br>
-- <br>Reconnaissance faciale :
+<br>- Reconnaissance faciale :
 <br>L'application inclut une fonctionnalité de reconnaissance faciale pour le déverrouillage, augmentant la sécurité et l'accessibilité de notre solution.
 <br>
-- <br>Optimisation et compression :
+<br>- Optimisation et compression :
 <br>Les techniques de pruning et de quantization ont été appliquées pour réduire la taille des modèles et améliorer leur efficacité sans sacrifier de manière significative la précision. Par exemple, YOLOv8 a été compressé de 89.5 MB à 23.8 MB.
 
 -**Points forts du projet :**
