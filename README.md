@@ -37,7 +37,7 @@ Entraînement, validation et test d'un modèle de classification d'images en uti
 <br> Images BD1, BD2 + photos web (kaggle) => 1716 images
 
 <br> fire : 572
-<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-fire-category.png width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-fire_category.png width="300">
 
 <br> no-fire : 572
 <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-no_fire-category.png width="300">
