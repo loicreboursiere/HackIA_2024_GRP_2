@@ -2,14 +2,11 @@
 <br>18-19 mai 2024
 <br>
 <br>
-#<img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-logo.png width="300">
-![HackIA 2024 logo](https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-logo.png "HackIA 2024 logo")
-#https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
-
+<img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-logo.png width="300">
 
 ## Groupe 2 (HackAI_2024_GRP_2)
 
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/HackIA24-GRP2-team width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/HackIA24-GRP2-team width="300">
 
 <br> *Data Expert* : Francesco Romeo :older_adult: - training, optimisation, explicabilité
 <br> *Operations Manager* : Loïc Reboursière :bearded_person: - pruning, compression, benchmark
@@ -40,21 +37,21 @@ Entraînement, validation et test d'un modèle de classification d'images en uti
 <br> Images BD1, BD2 + photos web (kaggle) => 1716 images
 
 <br> fire : 572
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/dataset-fire-category width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-fire-category width="300">
 
 <br> no-fire : 572
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/dataset-no_fire-category width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-no_fire-category width="300">
 
 <br> start-fire : 572
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/dataset-start_fire-category width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/dataset-start_fire-category width="300">
 
 <br> Dataset final : https://drive.google.com/drive/folders/10FvmIW5iMZp31oEN0X9UfeA_-M2dyt7w?usp=sharing 
  
 #### Face recognition
 Modèle “Face”
 <br> Authentification faciale grâce à la reconnaissance de visages.
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/face_recognition1 width="300">
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/face_recognition2 width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition1 width="300">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/face_recognition2 width="300">
 
 <br> + Telegram
 api ; compte HackIA24 - settings via BotFather (détails : https://docs.google.com/document/d/1P956ckT9Q_z-uEWGx0m6gaDZo564Fe3xZ0dCuvSrkto/edit?usp=drive_link)
@@ -87,9 +84,9 @@ métriques des meilleures versions de modèles compressés
 - **Pruning :** Description des techniques de pruning appliquées.
 Objectif : Réduire le poids pour rendre le modèle plus efficaces en termes de temps de calcul et d'utilisation de la mémoire, sans compromettre significativement leur précision. C'est déployer ces modèles sur des ressources limitées telles que les dispositifs Edge AI.
 Résultat : Notre modème étant petit, le pruning sur MobileNet n'a pas vraiment d'effet intéressant, même si compressé par 5 (190.000 paramètres). Nous n'avons que 30% d’accuracy.
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/pruning-MobileNetv3small-parameters width="200">
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/pruning-MobileNetv3small-results width="200">
-<br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/pruning-MobileNetv3small-retrain width="200">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-parameters width="200">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-results width="200">
+<br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/pruning-MobileNetv3small-retrain width="200">
 Pruning sur MobileNet, pas utile même si compressé par 5 (190.000 paramètres), que 30% d’accuracy.
 MobileNet : 4.5 MB | 2.7 MB
 
@@ -132,7 +129,7 @@ https://www.canva.com/design/DAGFneZKn2o/FtJgHbfXzrO6-3KTsr24dQ/edit?utm_content
 <br> Telegram : https://t.me/HackIA24_bot
 
 - **Méthodologie :**
- <br><img src=https://github.com/loicreboursiere/HackAI_2024_GRP_2/img/methodology width="300">
+ <br><img src=https://github.com/loicreboursiere/HackIA_2024_GRP_2/blob/main/img/methodology width="300">
 
 - **Références :** Liste des références
 
